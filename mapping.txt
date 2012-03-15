@@ -1,0 +1,72 @@
+# TUIO2HID Mapping
+#
+# Format:
+# {
+#   fiducial_id : key_name,
+#   fiducial_id : key_name,
+#   fiducial_id : key_name,
+# }
+#
+# fiducial_id must be an integer
+# key_name is either a character or a value in this list:
+#
+# SCROLLLOCK
+# BACK
+# F23
+# F22
+# F21
+# F20
+# BS
+# HOME
+# F17
+# TAB
+# LEFT
+# PGUP
+# PRTSC
+# CAPSLOCK
+# ENTER
+# F1
+# F2
+# F3
+# F4
+# F5
+# F6
+# F7
+# F8
+# F9
+# BREAK
+# RWIN
+# PGDN
+# DEL
+# DELETE
+# HELP
+# SHIFT
+# CAP
+# DOWN
+# BACKSPACE
+# CONTROL
+# INSERT
+# RMENU
+# END
+# SPACE
+# BKSP
+# F18
+# F19
+# ESC
+# F12
+# F13
+# F10
+# F11
+# F16
+# LWIN
+# F14
+# F15
+# F24
+# RIGHT
+# UP
+# INS
+# NUMLOCK
+{
+0:'LEFT',
+1:'RIGHT',
+}
