@@ -83,6 +83,6 @@ def removeobject(o):
 try:
         while True:
                 update()
-                sleep(0.1)
+                sleep(0.01)
 except KeyboardInterrupt:
         pass
