@@ -1,13 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-#inspirat per http://stackoverflow.com/questions/1823762/sendkeys-for-python-3-1-on-windows/2004267#2004267
+#code from http://stackoverflow.com/questions/1823762/sendkeys-for-python-3-1-on-windows/2004267#2004267
 
 import ctypes as ct
-#from win32con import SW_MINIMIZE, SW_RESTORE
-#from win32ui import FindWindow, error as ui_err
-from time import sleep
-
 
 class cls_KeyBdInput(ct.Structure):
     _fields_ = [
@@ -78,55 +74,9 @@ def make_input_objects( l_keys ):
     # these are the args for user32.SendInput()
     return ( n_inputs, p_input_array, n_size_0 )
 
-    '''It is interesting that o_input_array has gone out of scope
-    by the time p_input_array is used, but it works.'''
-
 
 def send_input( t_inputs ):
 
     rv = ct.windll.user32.SendInput( *t_inputs )
 
     return rv
-
-
-
-# define some commonly-used key sequences
-t_ctrl_s = (  # save in many apps
-    ( 0x11, 0 ),
-    ( 0x53, 0 ),
-    ( 0x11, 2 ),
-)
-t_ctrl_r = (  # reload in some apps
-    ( 0x11, 0 ),
-    ( 0x52, 0 ),
-    ( 0x11, 2 ),
-)
-
-
-def test():
-
-    # file > open; a non-invasive way to test
-    t_ctrl_o = ( ( 0x11, 0 ), ( 0x4F, 0 ), ( 0x11, 2 ), )
-
-    # writes "Hello\n"
-    # 0x10 is shift.  note that to repeat a key, as with 4C here, you have to release it after the first press
-    t_hello = ( ( 0x10, 0 ), ( 0x48, 0 ), ( 0x10, 2 ), ( 0x45, 0 ), ( 0x4C, 0 ), ( 0x4C, 2 ), ( 0x4C, 0 ), ( 0x4F, 0 ), ( 0x0D, 0 ), )
-
-
-    l_keys = [ ]
-    ## l_keys.extend( t_ctrl_o )
-    l_keys.extend( t_hello )
-    l_keys.extend( t_ctrl_s )
-
-    t_inputs = make_input_objects( l_keys )
-
-    n = send_input( window1, t_inputs )
-
-    ## print( "SendInput returned: %r" % n )
-    ## print( "GetLastError: %r" % ct.windll.kernel32.GetLastError() )
-    ## input( 'press enter to close' )
-
-
-
-if __name__ == '__main__':
-    test()
