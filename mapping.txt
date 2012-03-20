@@ -2,9 +2,9 @@
 #
 # Format:
 # {
-#   fiducial_id : key_name,
-#   fiducial_id : key_name,
-#   fiducial_id : key_name,
+#   fiducial_id : 'key_name',
+#   fiducial_id : 'key_name',
+#   fiducial_id : 'key_name',
 # }
 #
 # fiducial_id must be an integer
@@ -68,5 +68,6 @@
 # NUMLOCK
 {
 0:'LEFT',
-1:'RIGHT',
+2:'RIGHT',
+7:'UP'
 }
