@@ -18,7 +18,7 @@ import tuio
 def sendKeyEvent(s,updown):
         "Send a KeyBoard event"
         if s in keydict.CODES:
-                code = keydict.CODES[s]
+                code = keydict.CODES[s.upper()]
         elif len(s) == 1:
                 code = ord(s.upper())
         else:
